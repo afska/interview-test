@@ -1,16 +1,17 @@
 import React from "react";
 import Person from "./Person";
-import data from "./data";
 
 export default
 
 class PeopleList extends React.Component {
   render() {
+    const { people } = this.props;
+
     return (
       <div>
         {
-          data.map(it =>
-            <Person {...it} />
+          people.map((it, i) =>
+            <Person key={i} {...it} />
           )
         }
       </div>
